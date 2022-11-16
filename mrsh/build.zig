@@ -11,7 +11,7 @@ pub fn build(b: *Builder) !void {
     // ugly hack
     b.exe_dir = out;
 
-    const exe = b.addExecutable("dash", null);
+    const exe = b.addExecutable("mrsh", null);
     exe.addIncludePath(try std.fmt.allocPrint(b.allocator, "{s}/include", .{src}));
 
     exe.addCSourceFile(try std.fmt.allocPrint(b.allocator, "{s}/main.c", .{src}), &[_][]const u8 {});
